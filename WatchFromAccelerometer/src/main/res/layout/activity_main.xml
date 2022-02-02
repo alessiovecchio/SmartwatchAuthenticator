@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context=".MainActivity"
+    tools:deviceIds="wear">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/inner_frame_layout_padding"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="160dp"
+                android:layout_height="144dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="21dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/LwdLa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="modeHandler"
+                        android:text="Local" />
+
+                    <Button
+                        android:id="@+id/LwdRa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="modeHandler"
+                        android:text="Partially Remote" />
+
+                    <Button
+                        android:id="@+id/RwdRa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="modeHandler"
+                        android:text="Completely Remote" />
+                </LinearLayout>
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</androidx.wear.widget.BoxInsetLayout>

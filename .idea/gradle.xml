@@ -11,7 +11,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/SmartphoneRemoteAuthenticator" />
+            <option value="$PROJECT_DIR$/WatchFromAccelerometer" />
+            <option value="$PROJECT_DIR$/WatchFromFiles" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -1,2 +1,4 @@
-include ':app'
+include ':WatchFromAccelerometer'
 rootProject.name = "Smartwatch Authenticator"
+include ':SmartphoneRemoteAuthenticator'
+include ':WatchFromFiles'
