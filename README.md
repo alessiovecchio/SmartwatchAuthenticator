@@ -22,18 +22,22 @@ The code requires some manual changes to explore the different architectural con
 operation described in the article. 
 
 This repository contains three Android Studio modules, all contained in a single project: 
-- WatchFromAccelerometer: the app running on the watch. It uses the watch accelerometer and can be
+- **WatchFromAccelerometer**: the app running on the watch. It uses the watch accelerometer and can be
   configured to operate in standalone mode (Local) or in combination with the SmartphoneRemoteAuthenticator.
-- WatchFromFiles: same as the previous one, but instead of sampling the accelerometer it retrieved the
+- **WatchFromFiles**: same as the previous one, but instead of sampling the accelerometer it retrieved the
   acceleration values from a set of files. This can be useful to esure repeatable experiments. 
-- SmartphoneRemoteAuthenticator: the app running on the smartphone. It it used in the Partially Remote and
+- **SmartphoneRemoteAuthenticator**: the app running on the smartphone. It it used in the Partially Remote and
   Completely Remote configurations. It executes the anomaly detection algorithm and the feature extraction when needed. 
 
-Procedure: 
 
-1) Import this repository as an Android Studio project.
+## WatchFromAccelerometer 
+This module implements the watch app. Data is collected using the watch accelerometer. 
+It can operate in standalone mode (Local) configuration or together with the SmartphoneAuthenticator app
+running on the smartphone (Partially Remote and Completely Remote) configurations.
 
-2) Select the sampling frequancy. To this aim you have to modify the "Sampling Period" and 
+1) Use the WatchFromAccelrometer module.
+
+2) Select the sampling frequency. To this aim you have to modify the "Sampling Period" and 
    "Sampling Frequency" defined in the Constants.java source file (you have to use 
    one of the 4 possibilities indicated in the article). 
    You also have to modify rows 239, 278 of the SensorHandler.java file for subsampling (see the comments in the code).
@@ -45,6 +49,7 @@ remote or a completely remote configuration, as the model will be placed on the 
 - For the Partially Remote configuration you also have to follow the instructions for the smartphone side provided below. 
 
 4) Install the app on the smartwatch and start it. From the menu select Local or Partially Remote. 
+
 
 
 The Completely Remote configuration requires the following steps: 
@@ -60,15 +65,33 @@ training set is changed, the file must be removed, as the parmeters depend on th
 
 ## Smartphone side
 Another app, for the smartphone side, is required in case the system operates according to the 
-Partially Remote or Completely Remote configurations. 
+Partially Remote or Completely Remote configurations. The smartphone side is contained in the
+SmartphoneRemoteAuthenticator module. Once started, the app will automatically connect with the 
+other app running on the watch. The Android Wear OS app must be installed on the smartphone side. 
+
+The frequency and sampling period must be manually changed similarly to the watch app (but operating on the
+Constants.java file of the SmartphoneRemoteAuthenticator module). 
+
+The training_set.csv file, which provides a model of the user, must be uploaded onto
+"/storage/emulated/0/Download"
+
+Also for the smartwatch side, the anomaly detection methid uses 3 parameters for classifying the user.
+Such parameters must be placed in a file called "classification_parameters.txt".
+If the parameters are not provided, they are calculated and the file is created.
+If the file exists, the parameters are retrieved from the file. This means that, if the
+training set is changed, the file must be removed, as the parmeters depend on the training set.
 
 
 ## Reading acceleration values from files
 It is possible to read acceleration values from files. It is useful to test different configurations and
 parameters of operation on the same input data, to have a fair comparison. 
 
-You have to use a slightly different version of the app for this purpose. 
+You have to use a slightly different version of the app for 
+this purpose, which is contained in the WatchFromAccelrometer module.
 
 Steps:
 - Upload onto the smartwatch the wrist folder, which contains the 20 acceleration traces. This can be done using the following command\
    adb push PATH/TO/THE/WRIST_FOLDER /storage/emulated/0/Android/data/it.unipi.dii.smartwatchauthenticator/files
+  
+## Final note
+The code must be manually changed in several parts to carry out the studies presented in the paper. 
