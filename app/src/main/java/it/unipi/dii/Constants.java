@@ -1,4 +1,4 @@
-package com.example;
+package it.unipi.dii;
 
 public class Constants {
 

@@ -1,6 +1,5 @@
-package com.example.Authentication;
+package it.unipi.dii.Authentication;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class PreprocessingResult {

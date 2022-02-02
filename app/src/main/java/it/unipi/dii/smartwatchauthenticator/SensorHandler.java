@@ -1,4 +1,4 @@
-package com.example.smartwatchauthenticator;
+package it.unipi.dii.smartwatchauthenticator;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -14,23 +14,18 @@ import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.PowerManager;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-import com.example.Authentication.FeaturesCalculator;
-import com.example.Constants;
-import com.example.WalkingDetection.StepAccelerometerValues;
-import com.example.WalkingDetection.WalkDetectorFSM;
-import com.google.android.gms.tasks.OnCompleteListener;
+import it.unipi.dii.Authentication.FeaturesCalculator;
+import it.unipi.dii.WalkingDetection.StepAccelerometerValues;
+import it.unipi.dii.WalkingDetection.WalkDetectorFSM;
+import it.unipi.dii.Constants;
+
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.wearable.Asset;
-import com.google.android.gms.wearable.CapabilityClient;
-import com.google.android.gms.wearable.CapabilityInfo;
 import com.google.android.gms.wearable.DataClient;
 import com.google.android.gms.wearable.DataEvent;
 import com.google.android.gms.wearable.DataEventBuffer;
@@ -44,16 +39,13 @@ import com.google.android.gms.wearable.WearableListenerService;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class SensorHandler extends WearableListenerService implements SensorEventListener{
 

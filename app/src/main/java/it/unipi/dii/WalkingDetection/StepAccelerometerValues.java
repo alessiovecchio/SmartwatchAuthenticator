@@ -1,24 +1,26 @@
-package com.example.WalkingDetection;
+package it.unipi.dii.WalkingDetection;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
+/**
+ * Class containing the acceleration values
+ */
 public class StepAccelerometerValues {
 
-    private ArrayList<Float> Ax;
-    private ArrayList<Float> Ay;
-    private ArrayList<Float> Az;
-    private ArrayList<Float> modules;
-    private ArrayList<Long> timestamps;
+    private List<Float> Ax;
+    private List<Float> Ay;
+    private List<Float> Az;
+    private List<Float> module;
+    private List<Long> timestamps;
 
     public StepAccelerometerValues(){
 
         Ax = new ArrayList<>();
         Ay = new ArrayList<>();
         Az = new ArrayList<>();
-        modules = new ArrayList<>();
+        module = new ArrayList<>();
         timestamps = new ArrayList<>();
-
     }
 
     public void addTriplet(float x,float y,float z,long timestamp,float module){
@@ -26,28 +28,27 @@ public class StepAccelerometerValues {
         Ax.add(x);
         Ay.add(y);
         Az.add(z);
-        modules.add(module);
+        this.module.add(module);
         timestamps.add(timestamp);
-
     }
 
-    public ArrayList<Float> getModules() {
-        return modules;
+    public List<Float> getModules() {
+        return module;
     }
 
-    public ArrayList<Float> getAx() {
+    public List<Float> getAx() {
         return Ax;
     }
 
-    public ArrayList<Float> getAy() {
+    public List<Float> getAy() {
         return Ay;
     }
 
-    public ArrayList<Float> getAz() {
+    public List<Float> getAz() {
         return Az;
     }
 
-    public ArrayList<Long> getTimestamps() {
+    public List<Long> getTimestamps() {
         return timestamps;
     }
 }

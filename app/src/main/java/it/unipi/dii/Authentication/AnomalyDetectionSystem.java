@@ -1,15 +1,7 @@
-package com.example.Authentication;
+package it.unipi.dii.Authentication;
 
-import android.os.Build;
-import android.util.Log;
-
-import androidx.annotation.RequiresApi;
-import androidx.core.content.res.FontResourcesParserCompat;
-
-import com.example.Constants;
-import com.example.WalkingDetection.ACFilteringResult;
-import com.example.WalkingDetection.StepAccelerometerValues;
-import com.example.smartwatchauthenticator.SensorHandler;
+import it.unipi.dii.Constants;
+import it.unipi.dii.WalkingDetection.ACFilteringResult;
 
 import uk.me.berndporr.iirj.*;
 
@@ -22,8 +14,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Random;
 

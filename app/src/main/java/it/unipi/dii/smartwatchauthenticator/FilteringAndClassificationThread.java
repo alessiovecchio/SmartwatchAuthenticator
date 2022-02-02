@@ -1,21 +1,16 @@
-package com.example.smartwatchauthenticator;
-
-import static android.content.Context.VIBRATOR_SERVICE;
+package it.unipi.dii.smartwatchauthenticator;
 
 import android.os.Build;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
 import android.util.Log;
 import android.content.Context;
 
 import androidx.annotation.RequiresApi;
 
-import com.example.Authentication.AnomalyDetectionSystem;
-import com.example.Authentication.PreprocessingResult;
-import com.example.Constants;
-import com.example.WalkingDetection.ACFilteringResult;
-import com.example.WalkingDetection.StepAccelerometerValues;
-import com.example.WalkingDetection.WalkDetectorFSM;
+import it.unipi.dii.Authentication.AnomalyDetectionSystem;
+import it.unipi.dii.Authentication.PreprocessingResult;
+import it.unipi.dii.WalkingDetection.WalkDetectorFSM;
+import it.unipi.dii.WalkingDetection.ACFilteringResult;
+import it.unipi.dii.WalkingDetection.StepAccelerometerValues;
 
 import java.io.File;
 import java.io.FileWriter;

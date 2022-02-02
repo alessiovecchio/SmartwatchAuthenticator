@@ -1,18 +1,12 @@
-package com.example.smartwatchauthenticator;
+package it.unipi.dii.smartwatchauthenticator;
 
-import android.content.Context;
 import android.content.Intent;
-import android.hardware.Sensor;
-import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
-
-import java.util.List;
 
 public class MainActivity extends WearableActivity {
 

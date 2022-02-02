@@ -1,16 +1,15 @@
-package com.example.WalkingDetection;
+package it.unipi.dii.WalkingDetection;
 
-import android.util.Log;
+import it.unipi.dii.Authentication.FeaturesCalculator;
+import it.unipi.dii.Constants;
 
-import com.example.Authentication.FeaturesCalculator;
-import com.example.Constants;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 import uk.me.berndporr.iirj.Butterworth;
 
+/**
+ * This class implements the walking detection Finite State Machine
+ */
 public class WalkDetectorFSM {
 
 
@@ -86,7 +85,7 @@ public class WalkDetectorFSM {
 
         if(State == Constants.GROUP_START_SEARCH){
 
-            //i'm searching for a new peak group start evaluating the "peak definition" condition
+            //I'm searching for a new peak group start evaluating the "peak definition" condition
             //If the condition is verified i will store the start time of the group passing after to te group end search state.
             if(analyzed_module > prev_module && analyzed_module >= next_module && analyzed_module >= Constants.PEAK_THR){
 

@@ -1,4 +1,4 @@
-package com.example.WalkingDetection;
+package it.unipi.dii.WalkingDetection;
 
 public class ACFilteringResult {
 

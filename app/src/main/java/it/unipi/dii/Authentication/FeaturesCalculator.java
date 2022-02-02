@@ -1,4 +1,4 @@
-package com.example.Authentication;
+package it.unipi.dii.Authentication;
 
 import java.util.ArrayList;
 import java.util.Collections;
